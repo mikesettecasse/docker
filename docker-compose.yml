@@ -7,7 +7,7 @@ services:
    volumes:
     - ./app:/app 
     - ./site.conf:/etc/nginx/conf.d/default.conf
-   links:
+   depends_on:
     - php
 
   php:
@@ -16,7 +16,10 @@ services:
     dockerfile: ./dockerfiles/Dockerfile
    volumes:
     - ./app:/app
+   command: php-fpm
    stdin_open: true
+   ports:
+    - "9000:9000"
 
   db:
    image: mysql
