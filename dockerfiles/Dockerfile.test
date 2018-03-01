@@ -1,0 +1,12 @@
+FROM debian:stretch
+
+COPY ./dockerfiles/sources.list /etc/apt
+
+RUN apt-get update
+
+RUN apt-get install -y wget
+
+
+ADD hola.txt /home/hola.txt
+
+WORKDIR /home
