@@ -96,9 +96,14 @@ function lightning_core_update_8005() {
  */
 function lightning_core_update_8006() {
   $modules = \Drupal::moduleHandler()->getModuleList();
-  $modules = array_keys($modules);
 
-  lightning_core_modules_installed($modules);
+  $keys = array_keys($modules);
+  $values = array_fill(0, count($keys), UpdateManager::VERSION_UNKNOWN);
+
+  \Drupal::configFactory()
+    ->getEditable('lightning.versions')
+    ->setData(array_combine($keys, $values))
+    ->save();
 }
 
 /**

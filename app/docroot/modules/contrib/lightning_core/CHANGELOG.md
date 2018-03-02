@@ -1,3 +1,7 @@
+## 1.0.0-rc3
+* Fixed a problem in the 8006 update that caused problems for users that had an
+  existing `lightning.versions` config object.
+
 ## 1.0.0-rc2
 * Behat contexts used for testing have been moved into Lightning Core.
 * The `lightning.versions` config object is now `lightning_core.versions`.
