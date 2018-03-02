@@ -20,6 +20,8 @@ services:
    stdin_open: true
    ports:
     - "9000:9000"
+   depends_on:
+    - db
 
   db:
    image: mysql
