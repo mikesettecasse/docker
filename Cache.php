@@ -30,7 +30,7 @@ class Cache {
   public static function mergeContexts(array $a = [], array $b = []) {
     $cache_contexts = array_unique(array_merge($a, $b));
     // assert('\Drupal::service(\'cache_contexts_manager\')->assertValidTokens($cache_contexts)');
-    assert(\Drupal::service('cache_contexts_manager')->assertValidTokens($cache_contexts));
+    assert(\Drupal::service(\'cache_contexts_manager\')->assertValidTokens($cache_contexts));
     sort($cache_contexts);
     return $cache_contexts;
   }

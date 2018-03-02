@@ -4356,7 +4356,7 @@
                 "datestamp": "1520006284",
                 "security-coverage": {
                     "status": "not-covered",
-                    "message": "Project has not opted into security advisory coverage!"
+                    "message": "RC releases are not covered by Drupal security advisories."
                 }
             },
             "installer-types": [
@@ -10863,17 +10863,17 @@
     },
     {
         "name": "twig/twig",
-        "version": "v1.35.0",
-        "version_normalized": "1.35.0.0",
+        "version": "v1.35.1",
+        "version_normalized": "1.35.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f"
+            "reference": "ffda54d85cc3aec3ba499c8c0eda9b2176edfe83"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/daa657073e55b0a78cce8fdd22682fddecc6385f",
-            "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/ffda54d85cc3aec3ba499c8c0eda9b2176edfe83",
+            "reference": "ffda54d85cc3aec3ba499c8c0eda9b2176edfe83",
             "shasum": ""
         },
         "require": {
@@ -10884,7 +10884,7 @@
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~3.3@dev"
         },
-        "time": "2017-09-27T18:06:46+00:00",
+        "time": "2018-03-02T18:06:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

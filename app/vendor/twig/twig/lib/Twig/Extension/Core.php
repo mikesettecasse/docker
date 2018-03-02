@@ -1270,6 +1270,10 @@ if (function_exists('mb_get_info')) {
         if ($thing instanceof \Countable || is_array($thing)) {
             return count($thing);
         }
+        
+        if ($thing instanceof \IteratorAggregate) {
+            return iterator_count($thing);
+        }
 
         return 1;
     }
@@ -1369,6 +1373,10 @@ else {
         if ($thing instanceof \Countable || is_array($thing)) {
             return count($thing);
         }
+        
+        if ($thing instanceof \IteratorAggregate) {
+            return iterator_count($thing);
+        }
 
         return 1;
     }
@@ -1444,7 +1452,7 @@ function twig_test_empty($value)
  *
  * <pre>
  * {# evaluates to true if the foo variable is an array or a traversable object #}
- * {% if foo is traversable %}
+ * {% if foo is iterable %}
  *     {# ... #}
  * {% endif %}
  * </pre>
