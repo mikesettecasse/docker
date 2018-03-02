@@ -13,10 +13,10 @@ services:
   php:
    build: 
     context: . 
-    dockerfile: ./dockerfiles/Dockerfile
+    dockerfile: dockerfiles/Dockerfile
    volumes:
     - ./app:/app
-   command: php-fpm
+   command: bash -c "composer create-project acquia/lightning-project /app" && php-fpm
    stdin_open: true
    ports:
     - "9000:9000"
