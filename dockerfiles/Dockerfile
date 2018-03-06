@@ -1,12 +1,17 @@
-FROM php:7.0-fpm
+FROM php:7.1-fpm
 
 COPY ./dockerfiles/sources.list /etc/apt
+
+RUN apt-get remove --purge libgnutls-deb0-28 -y
 
 RUN apt-get update && apt-get install -y \
 	wget unzip git curl \
 	libmcrypt-dev libpng12-dev libjpeg-dev libpq-dev zlib1g-dev\
 	mysql-client \
-	apt-transport-https dirmngr 
+	apt-transport-https dirmngr software-properties-common
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
 
 RUN docker-php-ext-install zip mysqli pdo pdo_mysql 
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
