@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
-RUN docker-php-ext-install zip mysqli pdo pdo_mysql 
+RUN docker-php-ext-install zip mysqli 
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
 RUN docker-php-ext-install gd mbstring pdo pdo_mysql zip opcache
 
@@ -21,5 +21,6 @@ RUN php -r "copy('https://getcomposer.org/installer','/var/www/html/composer-set
 RUN php /var/www/html/composer-setup.php
 RUN mv /var/www/html/composer.phar /usr/local/bin/composer
 
-
 COPY ./bashfiles/php_script.sh /usr/local/bin/php_script.sh
+
+EXPOSE 9000
