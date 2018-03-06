@@ -20,7 +20,7 @@ services:
    container_name: milken-php-container
    volumes:
     - ./app:/app
-   command: bash -c "/usr/local/bin/php_script.sh" 
+   command: bash -c "/usr/local/bin/php_script.sh"
    stdin_open: true
    ports:
     - "9000:9000"
